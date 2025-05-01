@@ -1,0 +1,150 @@
+@startuml
+' Simple background and font styling
+skinparam backgroundColor #F9F9F9
+skinparam classBackgroundColor LightYellow
+skinparam classBorderColor Black
+skinparam classFontSize 14
+skinparam classFontColor DarkBlue
+skinparam ClassHeaderBackgroundColor pink
+' Package for Frontend
+package "Veiw" {
+    class Veiw{
+        -controller : ProgramControler
+        +Veiw()
+        +run():void
+
+    }
+}
+
+' Package for Backend
+package "Controller" {
+    class ProgramControler{
+        -currentCircuit: Circuit
+        +ProgramControler(cName: Circuit)
+        +ProgramControler()
+        +creatCircuit(cNmae: string):int
+        +addElementToCircuit(eName: string):int
+        +addNodeTOCircuit(nNumber: int):int
+        +creatCuircuitMatrix():void
+        +simulateCircuit():int
+        +getResultOfSimolation():vector<vector<double>>
+
+
+
+
+    }
+}
+
+' Package for Database
+package "Model" {
+    class Circuit {
+        - circuitName: string
+        - circuitNodes: vector<Node*>
+        - circuitElements: map<string, Element*>
+        - circuitTimeStarted: double
+
+        + Circuit(name: string)
+        + setName(name: string): void
+        + getName(): string
+        + addNode(node: Node*): void
+        + removeNode(nodeNum: int): void
+        + getNode(nodeNum: int): Node*
+        + addElement(element: Element*): void
+        + removeElement(eName: string): void
+        + getElement(eName: string): Element*
+        + updateTime(timeStep: double): void
+        + getCurrentTime(): double
+        }
+
+
+
+    class Node {
+        -nodeNumber:int
+        -nodeElementsConnected:vector<Element*>
+        -nodeVoltage:double
+
+        +Node(number: int)
+        +getNumber():int
+        +getVoltage():double
+        +setVoltage(voltage: double):void
+        + addElement(element: Element*): void
+        + removeElement(eName: string): void
+        + getElement(eName: string): Element*
+
+
+        
+        
+    }
+
+    class Element{
+        -elementNode1Connected:int
+        -elementNode2Connected:int
+        -elementCurrent:double
+        -elementVoltage:double
+        +Element(node1: int, node2: int)
+        +setNode1(int node1 ):void
+        +setNode2(int node2 ):void
+        +getNode1():int
+        +getNode2():int
+        +setCurrent(current: double):void
+        +getCurrent():double
+        +setVoltage(voltage: double):void
+        +getVoltage():double
+
+    }
+
+    class Resistor{
+        -isLinear:bool
+        -resistance:double
+        -voltage_current-Relatin:vector<vector<double>>
+        +Resistor(resistence: double)
+        +Resistor(relatin: vector<vector<double>>)
+        +getResistance():double
+
+        }
+
+
+    class Capacitor{
+        -isLinear:bool
+        -capacitance:double
+        -charge_voltage-Relatin:vector<vector<double>>
+        +Cpacitor(capacitance: double)
+        +Capacitor(relatin: vector<vector<double>>)
+        +getCapacitance():double
+        
+
+
+    }
+
+    class Inductor{
+        -isLinear:bool
+        -inductance:double
+        -flux_current-Relation:vector<vector<double>>
+        +Inductor(inductance:double)
+        +Inductor(relation:vector<vector<double>>)
+        +getInductance():double
+    }
+
+
+    class Source{
+        -isVoltageOrCurrent:bool
+        -amount:double
+        +Source(currentORVoltage: bool, amount: double)
+        +getAmount():double
+        +changeAmount(newAmount: double):void
+
+    }
+}
+
+' Simple relationships (arrows) between the components
+Circuit*--Node
+Circuit*--Element
+Node*--Element
+Resistor--|>Element
+Capacitor--|>Element
+Source--|>Element
+Inductor--|>Element
+ProgramControler*--Circuit
+Veiw*--ProgramControler
+
+@enduml
