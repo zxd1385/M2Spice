@@ -5,13 +5,15 @@
 #ifndef ELEMENT_H
 #define ELEMENT_H
 
-#include "Node.h"
+#pragma once
+class Node;
 
 
 class Element {
     Node* firstNode;
     Node* secondNode;
     public:
+    Element(){};
     Element(Node* firstNode,Node* secondNode);
     ~Element();
     Node* getFirstNode();
