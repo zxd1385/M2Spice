@@ -1,3 +1,0 @@
-C:/Users/Novin#####/CLionProjects/M2Spice/cmake-build-debug/CMakeFiles/M2Spice.dir
-C:/Users/Novin#####/CLionProjects/M2Spice/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Novin#####/CLionProjects/M2Spice/cmake-build-debug/CMakeFiles/rebuild_cache.dir
