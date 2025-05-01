@@ -4,11 +4,17 @@
 
 #ifndef RESISTOR_H
 #define RESISTOR_H
+#include "../Element.h"
 
 
-
-class Resistor {
-
+class Resistor : public Element{
+    private:
+    double resistor;
+    public:
+    Resistor(Node* firstNode,Node* secondNode,double R);
+    double getResistor();
+    void setResistor(double);
+    ~Resistor();
 };
 
 

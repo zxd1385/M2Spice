@@ -5,10 +5,16 @@
 #ifndef VOLTAGESOURCE_H
 #define VOLTAGESOURCE_H
 
+#include "../Element.h"
 
-
-class VoltageSource {
-
+class VoltageSource : public Element {
+      private:
+      double voltage;
+      public:
+      VoltageSource(Node* firstNode,Node* secondNode,double voltage);
+      double getVoltage();
+      void setVoltage(double voltage);
+      ~VoltageSource();
 };
 
 

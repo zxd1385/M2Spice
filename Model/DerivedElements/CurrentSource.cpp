@@ -3,3 +3,14 @@
 //
 
 #include "CurrentSource.h"
+
+CurrentSource::CurrentSource(Node* firstNode,Node* secondNode,double current): current(current), Element(firstNode,secondNode) {
+  }
+
+void CurrentSource::setCurrent(double current) {
+  this->current = current;
+}
+
+double CurrentSource::getCurrent() {
+  return this->current;
+}
