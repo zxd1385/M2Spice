@@ -4,7 +4,7 @@
 
 #include "CurrentSource.h"
 
-CurrentSource::CurrentSource(Node* firstNode,Node* secondNode,double current): current(current), Element(firstNode,secondNode) {
+CurrentSource::CurrentSource(Node* firstNode,Node* secondNode,double current , string cName): current(current), cName(cName), Element(firstNode,secondNode) {
   }
 
 void CurrentSource::setCurrent(double current) {

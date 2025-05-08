@@ -14,7 +14,9 @@ class Node;
 class Element {
     Node* firstNode;
     Node* secondNode;
+
     public:
+    static double timeSteps;
     Element(){};
     Element(Node* firstNode,Node* secondNode);
     ~Element(){};
@@ -25,6 +27,9 @@ class Element {
     virtual void similate(){};
     virtual string getType(){};
     virtual double getValue(){};
+    virtual void updateValue(double value){};
+    virtual double getAddedVoltage(){};
+    virtual void addValue(double,string){};
 };
 
 

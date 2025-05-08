@@ -9,9 +9,10 @@
 
 class CurrentSource : public Element {
   private:
+    string cName;
     double current;
     public:
-      CurrentSource(Node* firstNode,Node* secondNode,double current);
+      CurrentSource(Node* firstNode,Node* secondNode,double current, string cName);
       double getCurrent();
       void setCurrent(double current);
     virtual string getType() {

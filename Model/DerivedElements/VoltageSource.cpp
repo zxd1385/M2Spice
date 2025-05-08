@@ -4,8 +4,9 @@
 
 #include "VoltageSource.h"
 
-VoltageSource::VoltageSource(Node* firstNode,Node* secondNode,double voltage): Element(firstNode,secondNode){
+VoltageSource::VoltageSource(Node* firstNode,Node* secondNode,double voltage,string vName): Element(firstNode,secondNode){
   this->voltage = voltage;
+  this->vName = vName;
 }
 double VoltageSource::getVoltage(){
   return this->voltage;

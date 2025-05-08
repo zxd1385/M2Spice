@@ -20,6 +20,8 @@ Node *Element::getSecondtNode() {
     return this->secondNode;
 }
 
+double Element::timeSteps = 0.001;
+
 
 
 

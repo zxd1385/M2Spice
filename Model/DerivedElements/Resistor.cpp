@@ -4,7 +4,8 @@
 
 #include "Resistor.h"
 
-Resistor::Resistor(Node *firstNode, Node *secondNode, double R): resistor(R) , Element(firstNode, secondNode) {
+Resistor::Resistor(Node *firstNode, Node *secondNode, double R, string rName): resistor(R) , Element(firstNode, secondNode) {
+    resistor_map[rName] = R;
 }
 double Resistor::getResistor() {
     return this->resistor;
