@@ -42,23 +42,28 @@ int main() {
         }
         cout <<"   " << infoMat[i] << endl;
     }
+
 cout << "------------------------------------------" << endl;
     LUdecomposition myLU;
     myLU.decomposition(circuitMat);
     vector<vector<double>> Lmat = myLU.getLMat();
     vector<vector<double>> Umat = myLU.getUMat();
-    for (int i = 0; i < Lmat.size(); i++) {
-        for (int j = 0; j < Lmat[i].size(); j++) {
-            cout << setw(6) << fixed << setprecision(3)<< Lmat[i][j] << " ";
-        }
-        cout << endl;
+    vector<double> x = myLU.solveLU(Lmat,Umat,infoMat);
+    for (int i = 0; i < x.size(); i++) {
+        cout << setw(4) << x[i] << endl;
     }
-    cout << "--------------------------------------------" << endl;
-    for (int i = 0; i < Umat.size(); i++) {
-        for (int j = 0; j < Umat[i].size(); j++) {
-            cout << setw(4) << Umat[i][j] << " ";
-        }
-        cout << endl;
-    }
+    // for (int i = 0; i < Lmat.size(); i++) {
+    //     for (int j = 0; j < Lmat[i].size(); j++) {
+    //         cout << setw(6) << fixed << setprecision(3)<< Lmat[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+    // cout << "--------------------------------------------" << endl;
+    // for (int i = 0; i < Umat.size(); i++) {
+    //     for (int j = 0; j < Umat[i].size(); j++) {
+    //         cout << setw(4) << Umat[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
     return 0;
 }

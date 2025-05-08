@@ -88,3 +88,6 @@
 7	240	7684205788927405	CMakeFiles/M2Spice.dir/Controller/AnalisisAlgorithms/LUdecomposition.cpp.obj	fb7ff9997e730304
 3	394	7684205788887089	CMakeFiles/M2Spice.dir/main.cpp.obj	16ed1dfb018be9d9
 394	590	7684205792791196	M2Spice.exe	380077db3bd22605
+6	272	7684279273034593	CMakeFiles/M2Spice.dir/Controller/AnalisisAlgorithms/LUdecomposition.cpp.obj	fb7ff9997e730304
+2	411	7684279272999502	CMakeFiles/M2Spice.dir/main.cpp.obj	16ed1dfb018be9d9
+411	626	7684279277080263	M2Spice.exe	380077db3bd22605
