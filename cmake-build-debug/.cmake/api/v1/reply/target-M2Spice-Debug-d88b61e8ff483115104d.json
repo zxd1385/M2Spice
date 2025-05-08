@@ -61,7 +61,11 @@
 				11,
 				13,
 				15,
-				17
+				17,
+				19,
+				21,
+				23,
+				25
 			]
 		}
 	],
@@ -107,7 +111,11 @@
 				11,
 				13,
 				15,
-				17
+				17,
+				19,
+				21,
+				23,
+				25
 			]
 		},
 		{
@@ -122,7 +130,11 @@
 				12,
 				14,
 				16,
-				18
+				18,
+				20,
+				22,
+				24,
+				26
 			]
 		}
 	],
@@ -225,12 +237,56 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "CurrentSource.cpp",
+			"path" : "Model/DerivedElements/CurrentSource.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "CurrentSource.h",
+			"path" : "Model/DerivedElements/CurrentSource.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Model/DerivedElements/VoltageSource.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Model/DerivedElements/VoltageSource.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Model/Circuit.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Model/Circuit.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Model/Graph.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Model/Graph.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Model/Node.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Model/Node.h",
 			"sourceGroupIndex" : 1
 		}
 	],

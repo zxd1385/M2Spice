@@ -20,11 +20,13 @@ add_executable(M2Spice main.cpp
         Model/DerivedElements/Capacitor.h
         Model/DerivedElements/Inductor.cpp
         Model/DerivedElements/Inductor.h
-        CurrentSource.cpp
-        CurrentSource.h
+        Model/DerivedElements/CurrentSource.cpp
+        Model/DerivedElements/CurrentSource.h
         Model/DerivedElements/VoltageSource.cpp
         Model/DerivedElements/VoltageSource.h
         Model/Circuit.cpp
         Model/Circuit.h
         Model/Graph.cpp
-        Model/Graph.h)
+        Model/Graph.h
+        Model/Node.cpp
+        Model/Node.h)

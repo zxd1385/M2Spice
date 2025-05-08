@@ -1,0 +1,19 @@
+# ninja log v6
+1	181	7679923342831262	build.ninja	7823033841f1e443
+2	214	7678255800256159	CMakeFiles/M2Spice.dir/Model/Node.cpp.obj	e37224f2314e1289
+41	148	7678224195916323	CMakeFiles/M2Spice.dir/Model/Graph.cpp.obj	7e7a951f08f4afe
+1	17	7678224869032752	C:/Users/Novin#####/CLionProjects/M2Spice/cmake-build-debug/CMakeFiles/cmake.verify_globs	2caded09283ca171
+20	153	7678224195698039	CMakeFiles/M2Spice.dir/Controller/AnalisisAlgorithms/MNAanalisis.cpp.obj	e021127b36784bca
+26	153	7678224195757581	CMakeFiles/M2Spice.dir/Model/DerivedElements/Capacitor.cpp.obj	bbc5a13dbcfc9b07
+2	177	7678244918161427	CMakeFiles/M2Spice.dir/main.cpp.obj	16ed1dfb018be9d9
+9	79	7678244918368901	CMakeFiles/M2Spice.dir/Model/DerivedElements/CurrentSource.cpp.obj	3ac1c819a6ca213a
+53	158	7678224196034274	CMakeFiles/M2Spice.dir/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.obj	fcf99fc9c3c20616
+12	80	7678244918392063	CMakeFiles/M2Spice.dir/Model/DerivedElements/VoltageSource.cpp.obj	c6243e9a9c7bdad2
+18	158	7678224195684795	CMakeFiles/M2Spice.dir/Controller/AnalisisAlgorithms/LUdecomposition.cpp.obj	fb7ff9997e730304
+48	161	7678224195988430	CMakeFiles/M2Spice.dir/View/View.cpp.obj	457b46693df2924d
+30	161	7678224195805971	CMakeFiles/M2Spice.dir/Model/DerivedElements/Inductor.cpp.obj	b2fd6a593a524fda
+22	163	7678224195722089	CMakeFiles/M2Spice.dir/Controller/ProggramController.cpp.obj	6d8e70320153c478
+7	80	7678244918334987	CMakeFiles/M2Spice.dir/Model/DerivedElements/Resistor.cpp.obj	9ac4a860f31b59f9
+24	163	7678224195735736	CMakeFiles/M2Spice.dir/Model/Circuit.cpp.obj	1f23803fe31baefc
+5	81	7678244918322072	CMakeFiles/M2Spice.dir/Model/Element.cpp.obj	a4ae9c1cc4a21523
+215	369	7678255802384096	M2Spice.exe	380077db3bd22605
