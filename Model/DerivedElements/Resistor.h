@@ -14,7 +14,13 @@ class Resistor : public Element{
     Resistor(Node* firstNode,Node* secondNode,double R);
     double getResistor();
     void setResistor(double);
-    ~Resistor();
+    virtual double getValue() {
+        return resistor;
+    };
+    virtual string getType() {
+        return "Resistor";
+    };
+    ~Resistor(){};
 };
 
 

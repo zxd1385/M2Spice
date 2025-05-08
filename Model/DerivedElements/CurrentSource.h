@@ -14,6 +14,12 @@ class CurrentSource : public Element {
       CurrentSource(Node* firstNode,Node* secondNode,double current);
       double getCurrent();
       void setCurrent(double current);
+    virtual string getType() {
+        return "CurrentSource";
+    };
+    virtual double getValue() {
+        return current;
+    };
 
 };
 

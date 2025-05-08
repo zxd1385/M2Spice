@@ -21,7 +21,7 @@ private:
     vector<Element*> elements;
     public:
       Node(int nodeNumber);
-      ~Node();
+      ~Node(){};
       static double getTimeSteps();
       static double getStartTime();
       static double getEndTime();

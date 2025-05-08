@@ -14,3 +14,4 @@ double VoltageSource::getVoltage(){
 void VoltageSource::setVoltage(double voltage){
   this->voltage = voltage;
 }
+

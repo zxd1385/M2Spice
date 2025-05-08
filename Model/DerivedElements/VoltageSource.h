@@ -14,7 +14,13 @@ class VoltageSource : public Element {
       VoltageSource(Node* firstNode,Node* secondNode,double voltage);
       double getVoltage();
       void setVoltage(double voltage);
-      ~VoltageSource();
+      virtual string getType() {
+            return "VoltageSource";
+      };
+      virtual double getValue() {
+            return voltage;
+      };
+      ~VoltageSource(){};
 };
 
 

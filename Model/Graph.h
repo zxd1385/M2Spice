@@ -14,10 +14,15 @@ class Graph {
     vector<Element*> elements;
     vector<Node*> nodes;
     vector<vector<double>> matrix;
+    vector<double> infoMatrix;
+  int DIM ;
+  int G ;
+  int V ;
     public:
       Graph(vector<Element*> elements, vector<Node*> nodes);
       ~Graph();
-      int buildMatrix();
+      vector<vector<double>> buildMatrix();
+    vector<double> buildInfoMatrix();
 
 
 };

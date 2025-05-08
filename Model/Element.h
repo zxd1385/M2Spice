@@ -6,6 +6,8 @@
 #define ELEMENT_H
 
 #pragma once
+#include <string>
+using namespace std;
 class Node;
 
 
@@ -15,11 +17,14 @@ class Element {
     public:
     Element(){};
     Element(Node* firstNode,Node* secondNode);
-    ~Element();
+    ~Element(){};
     Node* getFirstNode();
     Node* getSecondtNode();
     void setFirstNode(Node* node);
     void setSecondtNode(Node* node);
+    virtual void similate(){};
+    virtual string getType(){};
+    virtual double getValue(){};
 };
 
 
