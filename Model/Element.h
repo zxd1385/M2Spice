@@ -7,6 +7,7 @@
 
 #pragma once
 #include <string>
+#include <vector>
 using namespace std;
 class Node;
 
@@ -30,6 +31,8 @@ class Element {
     virtual void updateValue(double value){};
     virtual double getAddedVoltage(){};
     virtual void addValue(double,string){};
+    virtual void updateDynamicElements( vector<Node*> & nodes,  vector<Element*>& elements){};
+    virtual void redoDynamicElements( vector<Node*> & nodes,  vector<Element*>& elements){};
 };
 
 

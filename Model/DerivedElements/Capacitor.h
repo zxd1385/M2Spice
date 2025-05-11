@@ -4,6 +4,9 @@
 
 #ifndef CAPACITOR_H
 #define CAPACITOR_H
+#include <iostream>
+#include <ostream>
+
 #include "../Node.h"
 #include <vector>
 #include <string>
@@ -30,12 +33,27 @@ public:
         return "Capacitor";
     };
     virtual void updateValue(double value) {
+
         double voltage = voltages[voltages.size()-1] + intermediateNode->getVoltages()[intermediateNode->getVoltages().size()-1] - this->getSecondtNode()->getVoltages()[this->getSecondtNode()->getVoltages().size()-1] ;
         voltages.push_back(voltage);
         intermediateVoltageSource->setVoltage(voltage);
     };
     virtual double getAddedVoltage() {
 
+    };
+    virtual void updateDynamicElements( vector<Node*> & nodes,  vector<Element*>& elements){
+        intermediateResistor->setResistor(timeSteps/capacitance);
+        for (auto& x : nodes) {
+        if (x->getNodeNumber()!=0)
+            x->setNodeNumber(x->getNodeNumber() + 1);
+        }
+        this->intermediateNode->setNodeNumber(1);
+    };
+    virtual void redoDynamicElements( vector<Node*> & nodes,  vector<Element*>& elements) {
+        for (auto& x : nodes) {
+            if (x->getNodeNumber()!=0)
+                x->setNodeNumber(x->getNodeNumber() - 1);
+        }
     };
     ~Capacitor(){};
 

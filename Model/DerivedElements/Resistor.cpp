@@ -11,6 +11,6 @@ double Resistor::getResistor() {
     return this->resistor;
 }
 void Resistor::setResistor(double R) {
-    this->resistor = R;
+    this->resistor_map["__R"] = R;
 }
 
