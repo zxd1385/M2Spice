@@ -24,7 +24,7 @@ public:
     VoltageSource* intermediateVoltageSource;
     Resistor* intermediateResistor;
     vector<double> voltages;
-
+    Capacitor(){};
     Capacitor(Node* firstNode,Node* secondNode,string cName, double capacitance, double initializedVoltage, vector<Node*> & nodes,  vector<Element*>& elements);
     virtual void updateVoltage(double voltage) {
         voltages.push_back(voltage);

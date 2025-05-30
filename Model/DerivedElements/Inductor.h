@@ -20,7 +20,7 @@ public:
     CurrentSource* intermediateCurrentSource;
     Resistor* intermediateResistor;
     vector<double> currents;
-
+    Inductor(){};
     Inductor(Node* firstNode,Node* secondNode,string iName, double inductance, double initializedCurrent, vector<Node*> & nodes,  vector<Element*>& elements);
     virtual void updateVoltage(double voltage) {
         currents.push_back(voltage);

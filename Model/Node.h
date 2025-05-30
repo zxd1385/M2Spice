@@ -20,6 +20,7 @@ private:
     vector<double> nodeVoltages;
     vector<Element*> elements;
     public:
+    Node(){};
       Node(int nodeNumber);
       ~Node(){};
       static double getTimeSteps();

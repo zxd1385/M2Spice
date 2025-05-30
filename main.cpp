@@ -12,8 +12,11 @@
 #include "Model/DerivedElements/Inductor.h"
 #include "Model/DerivedElements/Resistor.h"
 #include "Model/DerivedElements/VoltageSource.h"
+#include "View/View.h"
 
 int main() {
+    View view;
+    view.run();
     vector<Element*> elements;
     vector<Node*> nodes;
     Node GND(0);

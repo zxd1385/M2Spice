@@ -4,7 +4,6 @@
 
 #ifndef LUDECOMPOSITION_H
 #define LUDECOMPOSITION_H
-#include "../ProggramController.h"
 #include <vector>
 using namespace std;
 

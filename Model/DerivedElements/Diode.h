@@ -26,6 +26,7 @@ class Diode : public Element{
     vector<Element*> elements;
     bool isZener;
     public:
+    Diode(){};
     Diode(Node* firstNode,Node* secondNode,string dName,double Is, double n,double VT,vector<Node*> & nodes,  vector<Element*>& elements);
     Diode(Node* firstNode,Node* secondNode,string dName,vector<Node*> & nodes,  vector<Element*>& elements);
     double linearizedConductance() {

@@ -36,6 +36,7 @@ class VoltageSource : public Element {
       int cycleNow;
       double time;
       public:
+      VoltageSource(){};
       VoltageSource(Node* firstNode,Node* secondNode,double voltage,string vName);
       VoltageSource(Node* firstNode,Node* secondNode,double g,Node* firstNodeDepent,Node* secondNodeDependent,string vName);
       VoltageSource(Node* firstNode,Node* secondNode,double g,VoltageSource* voltageSourceDependent,string vName);

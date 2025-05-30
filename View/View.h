@@ -4,10 +4,16 @@
 
 #ifndef VIEW_H
 #define VIEW_H
-
+#include "../Controller/ProggramController.h"
 
 
 class View {
+    private:
+    ProggramController controller;
+    public:
+    View(){};
+    ~View(){};
+    void run();
 
 };
 

@@ -16,6 +16,7 @@ class Resistor : public Element{
     map<string, double> resistor_map;
     bool isSwitched;
     public:
+    Resistor(){};
     Resistor(Node* firstNode,Node* secondNode,double R,string rName);
     double getResistor();
     void setResistor(double);

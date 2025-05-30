@@ -22,6 +22,7 @@ class MNAanalisis {
     vector<vector<double>> Umatrix;
     vector<double> knownVector;
     public:
+    MNAanalisis(){};
     MNAanalisis(vector<Node*> nodes , vector<Element*> elements);
     void simulateCircuit(double stopTime,double timeSteps);
 

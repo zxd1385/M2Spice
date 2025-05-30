@@ -19,6 +19,7 @@ class CurrentSource : public Element {
     VoltageSource* voltageSourceDependent;
 
     public:
+    CurrentSource(){};
       CurrentSource(Node* firstNode,Node* secondNode,double current, string cName);
     CurrentSource(Node* firstNode,Node* secondNode,Node* firstNodeDependent,Node* secondNodeDependent,double g, string cName);
     CurrentSource(Node* firstNode,Node* secondNode,VoltageSource* voltageSourceDependent,double g, string cName);
