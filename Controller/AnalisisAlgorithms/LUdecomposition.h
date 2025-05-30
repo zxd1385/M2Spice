@@ -13,6 +13,7 @@ class LUdecomposition {
     private:
     vector<vector<double>> LMatrix;
     vector<vector<double>> UMatrix;
+    vector<int> permutation;
     public:
     LUdecomposition(){};
     ~LUdecomposition(){};

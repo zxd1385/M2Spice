@@ -34,7 +34,12 @@ void MNAanalisis::simulateCircuit(double stopTime,double timeSteps) {
     int cycle = stopTime / timeSteps;
 
     for(int i=0;i<cycle;i++) {
+        this->coefficientMatrix = this->graph->buildMatrix();
+        ludecomposition.decomposition(coefficientMatrix);
+        this->Lmatrix = this->ludecomposition.getLMat();
+        this->Umatrix = this->ludecomposition.getUMat();
         this->knownVector = this->graph->buildInfoMatrix();
+
 
         vector <double> answers = this->ludecomposition.solveLU(Lmatrix,Umatrix,knownVector);
 
@@ -46,7 +51,6 @@ void MNAanalisis::simulateCircuit(double stopTime,double timeSteps) {
             else if (x->getNodeNumber() == 0)
                 x->addVoltage(0);
         }
-
         int voltageSourceCount =0;
         for (auto& x : elements ) {
 
@@ -54,9 +58,11 @@ void MNAanalisis::simulateCircuit(double stopTime,double timeSteps) {
                 x->updateValue(answers[nodes.size()+voltageSourceCount++]);
 
             }
-            if (x->getType()=="Capacitor" || x->getType()=="Inductor") {
+            if (x->getType()=="Capacitor" || x->getType()=="Inductor" || x->getType()=="Diode") {
+
 
                 x->updateValue(1.00);
+
 
             }
         }

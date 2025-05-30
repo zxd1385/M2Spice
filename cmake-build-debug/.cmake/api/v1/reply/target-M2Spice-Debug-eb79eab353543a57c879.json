@@ -65,7 +65,8 @@
 				19,
 				21,
 				23,
-				25
+				25,
+				27
 			]
 		}
 	],
@@ -115,7 +116,8 @@
 				19,
 				21,
 				23,
-				25
+				25,
+				27
 			]
 		},
 		{
@@ -134,7 +136,8 @@
 				20,
 				22,
 				24,
-				26
+				26,
+				28
 			]
 		}
 	],
@@ -287,6 +290,17 @@
 		{
 			"backtrace" : 1,
 			"path" : "Model/Node.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Model/DerivedElements/Diode.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Model/DerivedElements/Diode.h",
 			"sourceGroupIndex" : 1
 		}
 	],

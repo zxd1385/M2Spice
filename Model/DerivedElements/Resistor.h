@@ -11,8 +11,10 @@
 
 class Resistor : public Element{
     private:
+    string resistorName;
     double resistor;
     map<string, double> resistor_map;
+    bool isSwitched;
     public:
     Resistor(Node* firstNode,Node* secondNode,double R,string rName);
     double getResistor();
@@ -32,6 +34,16 @@ class Resistor : public Element{
     virtual void addValue(double value,string rName) {
         resistor_map[rName] = value;
     };
+    void changeMainValue(double value) {
+        resistor = value;
+        resistor_map[resistorName] = value;
+    }
+    virtual bool isSwitch() {
+        return isSwitched;
+    }
+    void toggleSwitched() {
+        isSwitched = !isSwitched;
+    }
     ~Resistor(){};
 };
 

@@ -8,6 +8,7 @@
 #include "Model/Node.h"
 #include "Model/DerivedElements/Capacitor.h"
 #include "Model/DerivedElements/CurrentSource.h"
+#include "Model/DerivedElements/Diode.h"
 #include "Model/DerivedElements/Inductor.h"
 #include "Model/DerivedElements/Resistor.h"
 #include "Model/DerivedElements/VoltageSource.h"
@@ -17,46 +18,53 @@ int main() {
     vector<Node*> nodes;
     Node GND(0);
     Node GPO1(1);
-    Node GPO2(2);
-    Node GPO3(3);
-    Node GPO4(4);
-    Node GPO5(5);
+     Node GPO2(2);
+     Node GPO3(3);
+    // Node GPO4(4);
+    // Node GPO5(5);
     nodes.push_back(&GND);
     nodes.push_back(&GPO1);
     nodes.push_back(&GPO2);
-    nodes.push_back(&GPO3);
-    nodes.push_back(&GPO4);
-    nodes.push_back(&GPO5);
+     nodes.push_back(&GPO3);
+    // nodes.push_back(&GPO4);
+    // nodes.push_back(&GPO5);
 
-    Resistor R1 (&GPO3,&GPO2,1000,"R1");
-    Resistor R2 (&GPO4,&GPO5,1000,"R2");
-    R2.addValue(60,"R2P");
-    Resistor R3 (&GPO5,&GND,1000,"R3");
-    Resistor R4 (&GND,&GPO1,30,"R4");
-    VoltageSource V1(&GPO1,&GPO2,10,"V1");
-    VoltageSource V2(&GND,&GPO3,5,"V2");
-    CurrentSource i1(&GND,&GPO1,1,"C1");
-    Capacitor C1(&GPO1,&GND,"C1",0.001,2,nodes,elements);
-    Inductor I1(&GPO1,&GND,"I1",1,0.01,nodes,elements);
-    Resistor R5 (&GPO3,&GPO4,1000,"R5");
+    //Resistor R1 (&GPO1,&GPO2,1000,"R1");
+    Diode D1 (&GPO2,&GPO3,"D1",nodes,elements);
+    //R2.addValue(6,"R2P");
+    Resistor R3 (&GPO3,&GND,1000,"R3");
+    // Resistor R4 (&GPO3,&GPO2,2,"R4");
+    //VoltageSource V1(&GPO1,&GND,1,4,0.1,0.1,0.1,1,"V1");
+    //VoltageSource V2(&GPO1,&GND,2,0,50,"CCVS");
+     VoltageSource Vd3(&GPO1,&GND,6.5,"Vd3");
+    //CurrentSource I1(&GND,&GPO1,7,"C1");
+    //CurrentSource i2(&GPO2,&GND,9,"C1");
+    //CurrentSource id1(&GPO2,&GPO1,&V1,-13,"C1");
+     Capacitor C1(&GPO1,&GPO2,"C1",0.001,2,nodes,elements);
+    // Inductor I1(&GPO1,&GND,"I1",1,0,nodes,elements);
+    //Resistor R5 (&GPO3,&GPO4,1000,"R5");
 
     elements.push_back(&C1);
-    elements.push_back(&V2);
-    elements.push_back(&V1);
-    elements.push_back(&R1);
-    elements.push_back(&R2);
+    //elements.push_back(&V2);
+    //elements.push_back(&id1);
+    elements.push_back(&Vd3);
+    // elements.push_back(&Vd3);
+    //elements.push_back(&R1);
+    elements.push_back(&D1);
     elements.push_back(&R3);
-    elements.push_back(&R4);
-    elements.push_back(&R5);
-    elements.push_back(&i1);
-    elements.push_back(&I1);
+    // elements.push_back(&R4);
+    //elements.push_back(&R5);
+    //elements.push_back(&I1);
+    //elements.push_back(&i2);
+
+    //elements.push_back(&I1);
 
 
     MNAanalisis myAnalisis (nodes,elements);
     Element::timeSteps = 0.0001;
-    myAnalisis.simulateCircuit(1,Element::timeSteps);
-    for (int i = 0; i< nodes[1]->getVoltages().size(); i++) {
-        cout << nodes[1]->getVoltages()[i] << endl;
+    myAnalisis.simulateCircuit(0.15,Element::timeSteps);
+    for (int i = 0; i< nodes[2]->getVoltages().size(); i++) {
+        cout << nodes[2]->getVoltages()[i] << endl;
     }
 
 //     Graph G(elements,nodes);

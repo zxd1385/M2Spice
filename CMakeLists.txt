@@ -29,4 +29,6 @@ add_executable(M2Spice main.cpp
         Model/Graph.cpp
         Model/Graph.h
         Model/Node.cpp
-        Model/Node.h)
+        Model/Node.h
+        Model/DerivedElements/Diode.cpp
+        Model/DerivedElements/Diode.h)

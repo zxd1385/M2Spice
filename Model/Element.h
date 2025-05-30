@@ -33,6 +33,7 @@ class Element {
     virtual void addValue(double,string){};
     virtual void updateDynamicElements( vector<Node*> & nodes,  vector<Element*>& elements){};
     virtual void redoDynamicElements( vector<Node*> & nodes,  vector<Element*>& elements){};
+    virtual bool isSwitch(){};
 };
 
 

@@ -133,6 +133,12 @@ build CMakeFiles/M2Spice.dir/Model/Node.cpp.obj: CXX_COMPILER__M2Spice_unscanned
   OBJECT_DIR = CMakeFiles\M2Spice.dir
   OBJECT_FILE_DIR = CMakeFiles\M2Spice.dir\Model
 
+build CMakeFiles/M2Spice.dir/Model/DerivedElements/Diode.cpp.obj: CXX_COMPILER__M2Spice_unscanned_Debug C$:/Users/Novin#####/CLionProjects/M2Spice/Model/DerivedElements/Diode.cpp || cmake_object_order_depends_target_M2Spice
+  DEP_FILE = CMakeFiles\M2Spice.dir\Model\DerivedElements\Diode.cpp.obj.d
+  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\M2Spice.dir
+  OBJECT_FILE_DIR = CMakeFiles\M2Spice.dir\Model\DerivedElements
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target M2Spice
@@ -141,7 +147,7 @@ build CMakeFiles/M2Spice.dir/Model/Node.cpp.obj: CXX_COMPILER__M2Spice_unscanned
 #############################################
 # Link the executable M2Spice.exe
 
-build M2Spice.exe: CXX_EXECUTABLE_LINKER__M2Spice_Debug CMakeFiles/M2Spice.dir/main.cpp.obj CMakeFiles/M2Spice.dir/View/View.cpp.obj CMakeFiles/M2Spice.dir/Controller/ProggramController.cpp.obj CMakeFiles/M2Spice.dir/Controller/AnalisisAlgorithms/LUdecomposition.cpp.obj CMakeFiles/M2Spice.dir/Controller/AnalisisAlgorithms/MNAanalisis.cpp.obj CMakeFiles/M2Spice.dir/Model/Element.cpp.obj CMakeFiles/M2Spice.dir/Model/DerivedElements/Resistor.cpp.obj CMakeFiles/M2Spice.dir/Model/DerivedElements/Capacitor.cpp.obj CMakeFiles/M2Spice.dir/Model/DerivedElements/Inductor.cpp.obj CMakeFiles/M2Spice.dir/Model/DerivedElements/CurrentSource.cpp.obj CMakeFiles/M2Spice.dir/Model/DerivedElements/VoltageSource.cpp.obj CMakeFiles/M2Spice.dir/Model/Circuit.cpp.obj CMakeFiles/M2Spice.dir/Model/Graph.cpp.obj CMakeFiles/M2Spice.dir/Model/Node.cpp.obj
+build M2Spice.exe: CXX_EXECUTABLE_LINKER__M2Spice_Debug CMakeFiles/M2Spice.dir/main.cpp.obj CMakeFiles/M2Spice.dir/View/View.cpp.obj CMakeFiles/M2Spice.dir/Controller/ProggramController.cpp.obj CMakeFiles/M2Spice.dir/Controller/AnalisisAlgorithms/LUdecomposition.cpp.obj CMakeFiles/M2Spice.dir/Controller/AnalisisAlgorithms/MNAanalisis.cpp.obj CMakeFiles/M2Spice.dir/Model/Element.cpp.obj CMakeFiles/M2Spice.dir/Model/DerivedElements/Resistor.cpp.obj CMakeFiles/M2Spice.dir/Model/DerivedElements/Capacitor.cpp.obj CMakeFiles/M2Spice.dir/Model/DerivedElements/Inductor.cpp.obj CMakeFiles/M2Spice.dir/Model/DerivedElements/CurrentSource.cpp.obj CMakeFiles/M2Spice.dir/Model/DerivedElements/VoltageSource.cpp.obj CMakeFiles/M2Spice.dir/Model/Circuit.cpp.obj CMakeFiles/M2Spice.dir/Model/Graph.cpp.obj CMakeFiles/M2Spice.dir/Model/Node.cpp.obj CMakeFiles/M2Spice.dir/Model/DerivedElements/Diode.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\M2Spice.dir
