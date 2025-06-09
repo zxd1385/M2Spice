@@ -1,0 +1,2 @@
+Resistor R1 10.000000 N001 N000
+VoltageSource V1 6.000000 N000 N001

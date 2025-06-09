@@ -13,6 +13,7 @@ using namespace std;
 
 class Node {
 private:
+    string nName;
     int nodeNumber;
     static double timeSteps;
     static double startTime;
@@ -21,7 +22,7 @@ private:
     vector<Element*> elements;
     public:
     Node(){};
-      Node(int nodeNumber);
+      Node(int nodeNumber,string nName);
       ~Node(){};
       static double getTimeSteps();
       static double getStartTime();
@@ -33,6 +34,15 @@ private:
       void removeVoltage();
       void setNodeNumber(int nodeNumber);
       int getNodeNumber();
+    void setName(string name) {
+        this->nName = nName;
+    };
+    string getName() {
+        return nName;
+    };
+    void ClearElement()  {
+        this->nodeVoltages.clear();
+    }
       vector<double> getVoltages();
 
 };

@@ -22,9 +22,17 @@ class MNAanalisis {
     vector<vector<double>> Umatrix;
     vector<double> knownVector;
     public:
-    MNAanalisis(){};
+    MNAanalisis() {
+        this->graph = new Graph(elements,nodes);
+    };
     MNAanalisis(vector<Node*> nodes , vector<Element*> elements);
+    void setBasicVectors(vector<Node*> nodes , vector<Element*> elements) {
+        this->nodes = nodes;
+        this->elements = elements;
+        this->graph->setBasicVectors( elements,nodes);
+    }
     void simulateCircuit(double stopTime,double timeSteps);
+    void DCswipe(double startVal,double endVal,double increament,Element* e);
 
 
 };

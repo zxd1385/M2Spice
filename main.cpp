@@ -1,6 +1,8 @@
 #include <iostream>
+#include <cstdlib>
 #include <vector>
 #include <iomanip>
+#include <fstream>
 #include "Controller/ProggramController.h"
 #include "Controller/AnalisisAlgorithms/LUdecomposition.h"
 #include "Controller/AnalisisAlgorithms/MNAanalisis.h"
@@ -19,10 +21,10 @@ int main() {
     view.run();
     vector<Element*> elements;
     vector<Node*> nodes;
-    Node GND(0);
-    Node GPO1(1);
-     Node GPO2(2);
-     Node GPO3(3);
+    Node GND(0,"0");
+    Node GPO1(1,"1");
+     Node GPO2(2,"2");
+     Node GPO3(3,"3");
     // Node GPO4(4);
     // Node GPO5(5);
     nodes.push_back(&GND);

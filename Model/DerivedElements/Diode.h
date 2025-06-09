@@ -88,7 +88,10 @@ class Diode : public Element{
 
     };
 
-
+    string getValueToSerialize() override {
+        string type = isZener?"Z":"D";
+        return "Diode " + dName + " " + type + " " + this->getFirstNode()->getName() + " " + this->getSecondtNode()->getName();
+    };
 
 
 };

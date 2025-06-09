@@ -45,7 +45,6 @@ vector<vector<double>> Graph::buildMatrix(){
     int voltageSourceCount = 0;
     for (int i = 0; i < elements.size(); i++) {
         if (elements[i]->getType() == "Resistor" ) {
-            cout << "Resistor recognized!" << endl;
             if (elements[i]->getFirstNode()->getNodeNumber()!=0 && elements[i]->getSecondtNode()->getNodeNumber()!=0) {
                 matrix[elements[i]->getFirstNode()->getNodeNumber()-1][elements[i]->getSecondtNode()->getNodeNumber()-1] = -1.0/elements[i]->getValue();
                 matrix[elements[i]->getSecondtNode()->getNodeNumber()-1][elements[i]->getFirstNode()->getNodeNumber()-1] = -1.0/elements[i]->getValue();
@@ -60,7 +59,7 @@ vector<vector<double>> Graph::buildMatrix(){
 
         }
         if (elements[i]->getType() == "VoltageSource") {
-            cout << "VoltageSource recognized!" << endl;
+
             if (elements[i]->getFirstNode()->getNodeNumber()!=0) {
                 matrix[G+voltageSourceCount][elements[i]->getFirstNode()->getNodeNumber()-1] = 1;
                 matrix[elements[i]->getFirstNode()->getNodeNumber()-1][G+voltageSourceCount] = 1;

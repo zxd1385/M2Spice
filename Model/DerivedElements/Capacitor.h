@@ -29,6 +29,9 @@ public:
     virtual void updateVoltage(double voltage) {
         voltages.push_back(voltage);
     };
+    double getValue() override {
+        return capacitance;
+    };
     virtual string getType() {
         return "Capacitor";
     };
@@ -55,6 +58,18 @@ public:
                 x->setNodeNumber(x->getNodeNumber() - 1);
         }
     };
+    string getValueToSerialize() override {
+        return "Capacitor " + cName + " " + to_string(capacitance) + " " + this->getFirstNode()->getName() + " " + this->getSecondtNode()->getName();
+    };
+    void DCswipeValue(double value) override {
+        capacitance = value;
+    };
+    vector<double> getTRANCurrent() override {
+        return this->intermediateVoltageSource->getTRANCurrent();
+    }
+    void ClearElement() override {
+        this->voltages.clear();
+    }
     ~Capacitor(){};
 
 };

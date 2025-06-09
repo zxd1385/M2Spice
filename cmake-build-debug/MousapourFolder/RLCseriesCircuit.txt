@@ -1,0 +1,4 @@
+Capacitor C1 1.000000 Nkjk N003
+Inductor L1 1.000000 N003 N000
+Resistor R1 10.000000 N001 Nkjk
+VoltageSource V1 6.000000 N000 N001

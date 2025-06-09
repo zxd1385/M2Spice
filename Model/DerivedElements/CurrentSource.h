@@ -36,6 +36,20 @@ class CurrentSource : public Element {
     virtual double getValue() {
         return current;
     };
+    string getName() {
+        return cName;
+    };
+    Node* getFirstNodeDependentPointer() {
+        return firstNodeDependent;
+    }
+    Node* getSecondNodeDependentPointer() {
+        return secondNodeDependent;
+    }
+    void DCswipeValue(double value) override {
+        current = value;
+    };
+    string getValueToSerialize() override;
+
 
 };
 

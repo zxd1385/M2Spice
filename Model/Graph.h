@@ -21,6 +21,10 @@ class Graph {
     public:
       Graph(vector<Element*> elements, vector<Node*> nodes);
       ~Graph();
+  void setBasicVectors(vector<Element*> elements,vector<Node*> nodes) {
+    this->elements = elements;
+    this->nodes = nodes;
+  }
       vector<vector<double>> buildMatrix();
     vector<double> buildInfoMatrix();
 

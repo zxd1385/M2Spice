@@ -4,6 +4,21 @@
 
 #include "VoltageSource.h"
 
+#include "../Node.h"
+
+string VoltageSource::getValueToSerialize() {
+  if (this->getDependency() == "NAN") {
+    return "VoltageSource " + this->getName() + " " + to_string(voltage) + " " + this->getFirstNode()->getName() + " " + this->getSecondtNode()->getName();
+  }else if (this->getDependency() == "VCVS") {
+    return "VCVS " + this->getName() + " " + this->getFirstNode()->getName() + " " + this->getSecondtNode()->getName() + " " +  to_string(this->getGain()) + " " + this->getFirstNodeDependent()->getName() + " " + this->getSecondNodeDependent()->getName();
+  }else if (this->getDependency() == "CCVS") {
+    return "CCVS " + this->getName() + " " + this->getFirstNode()->getName() + " " + this->getSecondtNode()->getName() + " " +  to_string(this->getGain()) + " " + this->getVoltageSourceDependent()->getName();
+  }else if (this->getDependency() == "SIN") {
+    return "VSIN " + this->getName() + " " + this->getFirstNode()->getName() + " " + this->getSecondtNode()->getName() + " " +  to_string(this->getAmplitude()) + " " + to_string(this->getOffset()) + " " + to_string(this->getFrequency());
+  }else if (this->getDependency() == "PULSE") {
+    return "VPULSE " + this->getName() + " " + this->getFirstNode()->getName() + " " + this->getSecondtNode()->getName() + " " +  to_string(this->getInitialVoltage()) + " " + to_string(this->getVoltageON()) + " " + to_string(this->getTimeDelay()) + " " + to_string(this->getTimeRise()) + " " + to_string(this->getTimeFall()) + " " + to_string(this->getCycle());
+  }
+}
 VoltageSource::VoltageSource(Node* firstNode,Node* secondNode,double voltage,string vName): Element(firstNode,secondNode){
   this->voltage = voltage;
   this->vName = vName;
@@ -25,7 +40,7 @@ VoltageSource::VoltageSource(Node* firstNode,Node* secondNode,double amplitude,d
   this->voltage = offset;
   this->time = 0;
 }
-VoltageSource::VoltageSource(Node* firstNode,Node* secondNode,double initialVoltage,double voltageON,double timeDelay,double timeRise,double timeFall,int cycle,string vName):initialVoltage(initialVoltage),voltageON(voltageON),timeDelay(timeDelay),timeRise(timeRise),timeFall(timeRise),cycle(cycle),Element(firstNode,secondNode) {
+VoltageSource::VoltageSource(Node* firstNode,Node* secondNode,double initialVoltage,double voltageON,double timeDelay,double timeRise,double timeFall,int cycle,string vName):initialVoltage(initialVoltage),voltageON(voltageON),timeDelay(timeDelay),timeRise(timeRise),timeFall(timeFall),cycle(cycle),Element(firstNode,secondNode) {
   this->vName = vName;
   this->dependency = "PULSE";
   this->voltage = initialVoltage;

@@ -5,6 +5,15 @@
 #include "CurrentSource.h"
 
 #include "../Node.h"
+string CurrentSource::getValueToSerialize() {
+  if (this->getDependency() == "NAN") {
+    return "CurrentSource " + this->getName() + " " + to_string(current) + " " + this->getFirstNode()->getName() + " " + this->getSecondtNode()->getName();
+  }else if (this->getDependency() == "VCCS") {
+    return "VCCS " + this->getName() + " " + this->getFirstNode()->getName() + " " + this->getSecondtNode()->getName() + " " +  to_string(this->getGain()) + " " + this->getFirstNodeDependentPointer()->getName() + " " + this->getSecondNodeDependentPointer()->getName();
+  }else if (this->getDependency() == "CCCS") {
+    return "CCCS " + this->getName() + " " + this->getFirstNode()->getName() + " " + this->getSecondtNode()->getName() + " " +  to_string(this->getGain()) + " " + this->getVoltageSourceDependent()->getName();
+  }
+}
 
 CurrentSource::CurrentSource(Node* firstNode,Node* secondNode,double current , string cName): current(current), cName(cName), Element(firstNode,secondNode) {
   this->dependency = "NAN";

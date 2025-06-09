@@ -41,6 +41,18 @@ public:
 
     };
 
+    string getValueToSerialize() override {
+        return "Inductor " + iName + " " + to_string(inductance) + " " + this->getFirstNode()->getName() + " " + this->getSecondtNode()->getName();
+    };
+    void DCswipeValue(double value) override {
+        inductance = value;
+    };
+    vector<double> getTRANCurrent() override {
+        return currents;
+    }
+    void ClearElement() override {
+        this->currents.clear();
+    }
     ~Inductor(){};
 
 };

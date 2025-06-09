@@ -10,8 +10,9 @@ double Node::startTime = 0.0;
 double Node::endTime = 0.0;
 
 using namespace std;
-Node::Node(int nodeNumber){
+Node::Node(int nodeNumber, string nName){
   this->nodeNumber = nodeNumber;
+  this->nName = nName;
 }
 int Node::getNodeNumber(){
   return this->nodeNumber;

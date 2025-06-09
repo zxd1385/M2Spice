@@ -7,6 +7,7 @@
 #include <map>
 
 #include "../Element.h"
+#include "../Node.h"
 
 
 class Resistor : public Element{
@@ -44,6 +45,21 @@ class Resistor : public Element{
     }
     void toggleSwitched() {
         isSwitched = !isSwitched;
+    }
+    string getValueToSerialize() override {
+        return "Resistor " + resistorName + " " + to_string(resistor) + " " + this->getFirstNode()->getName() + " " + this->getSecondtNode()->getName();
+    };
+    void DCswipeValue(double value) override {
+        resistor = value;
+    };
+    vector<double> getTRANCurrent() override {
+        vector<double> trans;
+        vector<double> voltage1 = this->getFirstNode()->getVoltages();
+        vector<double> voltage2 = this->getSecondtNode()->getVoltages();
+        for (int i = 0; i < voltage1.size(); i++) {
+            trans.push_back((voltage1[i] - voltage2[i])/resistor);
+        }
+        return trans;
     }
     ~Resistor(){};
 };

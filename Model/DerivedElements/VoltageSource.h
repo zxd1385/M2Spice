@@ -43,6 +43,33 @@ class VoltageSource : public Element {
       VoltageSource(Node* firstNode,Node* secondNode,double amplitude,double offset,double frequency,string vName);
       VoltageSource(Node* firstNode,Node* secondNode,double initialVoltage,double voltageON,double timeDelay,double timeRise,double timeFall,int cycle,string vName);
       double getVoltage();
+      double getFrequency() {
+            return frequency;
+      };
+      double getAmplitude() {
+            return Amplitude;
+      }
+      double getOffset() {
+            return offset;
+      }
+      double getInitialVoltage() {
+            return initialVoltage;
+      }
+      double getVoltageON() {
+            return voltageON;
+      }
+      double getTimeDelay() {
+            return timeDelay;
+      }
+      double getTimeRise() {
+            return timeRise;
+      }
+      double getTimeFall() {
+            return timeFall;
+      }
+      double getCycle() {
+            return cycle;
+      }
       void setVoltage(double voltage);
       virtual string getType() {
             return "VoltageSource";
@@ -79,11 +106,24 @@ class VoltageSource : public Element {
 
             }
       };
+      void DCswipeValue(double value) override {
+             voltage = value;
+      };
+      string getValueToSerialize() override;
       string getDependency();
+      string getName() {
+            return vName;
+      };
       double getGain();
       Node* getFirstNodeDependent();
       Node* getSecondNodeDependent();
       VoltageSource* getVoltageSourceDependent();
+      vector<double> getTRANCurrent() override {
+            return currents;
+      }
+      void ClearElement() override {
+            this->currents.clear();
+      }
       ~VoltageSource(){};
 };
 
