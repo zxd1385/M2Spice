@@ -38,6 +38,9 @@ class Element {
     virtual string getValueToSerialize(){};
     virtual vector<double> getTRANCurrent(){};
     virtual void ClearElement(){};
+    void setName(string name) {
+
+    };
 };
 
 

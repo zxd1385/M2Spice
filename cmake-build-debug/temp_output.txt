@@ -1,6 +1,7 @@
 CCCStest.txt
 CCVStest.txt
 CurrentSourceTest.txt
+Diodetest.txt
 RCseriesCircuit.txt
 RLCseriesCircuit.txt
 RLseriesCircuit.txt

@@ -1,3 +1,2 @@
-Diode D1 Z N002 N000
 Resistor R1 10.000000 N001 N002
-VoltageSource V1 -5.000000 N000 N001 
+VoltageSource V1 -5.000000 N000 N001

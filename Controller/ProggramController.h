@@ -145,6 +145,24 @@ public:
         Nodes.clear();
         Elements.clear();
     }
+    int renameNode(string node,string nodename) {
+        if (Nodes.find(node) == Nodes.end()) {
+            return 0;
+        }
+        Nodes[nodename] = Nodes[node];
+        Nodes[nodename]->setName(nodename);
+        Nodes.erase(node);
+        return 1;
+    }
+    int renameElement(string element,string elementName) {
+        if (Elements.find(element) == Elements.end()) {
+            return 0;
+        }
+        Elements[elementName] = Elements[element];
+        //Elements[elementName]->set
+        Elements.erase(element);
+        return 1;
+    }
     int openNewSchemaic(string fileName) {
         std::string folder = "MousapourFolder";
         std::string filePath =  folder + "/" + fileName;

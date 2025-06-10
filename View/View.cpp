@@ -33,7 +33,8 @@ void View::run() {
     regex ShowElementList(R"(\s*show\s*element\s*list\s*)");
     regex ShowBoothList(R"(\s*show\s*booth\s*list\s*)");
     regex Open(R"(\s*open\s*(\S+)\s*)");
-
+    regex RenameNode(R"(\s*rename\s*node\s*(\S+)\s*to\s*(\S+)\s*)");
+    regex RenameElement(R"(\s*rename\s*element\s*(\S+)\s*to\s*(\S+)\s*)");
     //save...
     regex SaveCurrentCircuit(R"(\s*save\s*as\s*(\S+)\s*)");
     regex ShowAllCircuits(R"(\s*show\s*all\s*circuits\s*)");
@@ -399,6 +400,22 @@ void View::run() {
             controller.closeFile();
             cout << "Circuit " << currentCircuit << " Closed Succesfully! Now You Are In A Floating Schematic..."<< endl;
             currentCircuit = "No Schematic has been opened yet!";
+        }
+        else if (regex_search(entry, match, RenameNode)) {
+            int status = controller.renameNode(match[1],match[2]);
+            if (status == 0) {
+                cout << "Node " << match[1] << " not exists in the circuit." << endl;
+            }else {
+                cout << "Node " << match[1] << " renamed to " << match[2]  << endl;
+            }
+        }
+        else if (regex_search(entry, match, RenameElement)) {
+            int status = controller.renameElement(match[1],match[2]);
+            if (status == 0) {
+                cout << "Element " << match[1] << " not exists in the circuit." << endl;
+            }else {
+                cout << "Element " << match[1] << " renamed to " << match[2]  << endl;
+            }
         }
         else if (regex_search(entry, match, Open)) {
             int status = controller.openNewSchemaicFromAnyPath(match[1]);
